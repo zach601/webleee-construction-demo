@@ -1,0 +1,102 @@
+---
+import '../styles/global.css';
+
+const {
+  title,
+  description,
+  path = '/',
+  image = 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80'
+} = Astro.props;
+
+const siteName = 'ApexBuild Construction';
+const canonical = `https://webleee-construction-demo.pages.dev${path}`;
+const navigation = [
+  { href: '/', label: 'Home' },
+  { href: '/services/', label: 'Services' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/about/', label: 'About' },
+  { href: '/contact/', label: 'Contact' }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+  </head>
+  <body>
+    <header class="sticky top-0 z-50 border-b border-bone/10 bg-steel/90 backdrop-blur">
+      <nav class="container-shell flex min-h-20 items-center justify-between gap-5" aria-label="Primary navigation">
+        <a href="/" class="group flex items-center gap-3" aria-label="ApexBuild Construction home">
+          <span class="flex h-11 w-11 items-center justify-center bg-ember text-xl font-black text-steel">A</span>
+          <span class="leading-none">
+            <span class="block text-sm font-black uppercase tracking-[0.24em] text-bone">ApexBuild</span>
+            <span class="mt-1 block text-xs font-bold uppercase tracking-[0.18em] text-sand">Construction</span>
+          </span>
+        </a>
+        <div class="hidden items-center gap-7 lg:flex">
+          {navigation.map((item) => (
+            <a class="text-sm font-bold uppercase tracking-wide text-bone/70 transition hover:text-ember" href={item.href}>{item.label}</a>
+          ))}
+        </div>
+        <a href="/contact/" class="primary-button hidden lg:inline-flex">Request Quote</a>
+      </nav>
+      <div class="container-shell flex gap-5 overflow-x-auto border-t border-bone/10 py-3 lg:hidden" aria-label="Mobile navigation">
+        {navigation.map((item) => (
+          <a class="shrink-0 text-xs font-black uppercase tracking-wide text-bone/80" href={item.href}>{item.label}</a>
+        ))}
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="border-t border-bone/10 bg-[#0d0d0c]">
+      <div class="container-shell grid gap-10 py-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
+        <div>
+          <p class="eyebrow">Portfolio Demo</p>
+          <h2 class="mt-3 text-2xl font-black uppercase text-bone">ApexBuild Construction</h2>
+          <p class="mt-4 max-w-xl text-sm leading-6 text-bone/60">
+            This is a fictional demo website created by Webleee to showcase premium websites for construction and trade businesses.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-black uppercase tracking-wide text-bone">Pages</h3>
+          <ul class="mt-4 space-y-2 text-sm text-bone/60">
+            {navigation.map((item) => (
+              <li><a class="hover:text-ember" href={item.href}>{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-black uppercase tracking-wide text-bone">Contact</h3>
+          <ul class="mt-4 space-y-2 text-sm text-bone/60">
+            <li>(000) 000-0000</li>
+            <li>hello@example.com</li>
+            <li>Your service area</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-bone/10 py-5">
+        <div class="container-shell flex flex-col gap-2 text-xs font-bold uppercase tracking-wide text-bone/50 sm:flex-row sm:items-center sm:justify-between">
+          <span>Demo website by Webleee</span>
+          <span>Fictional construction company demo</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

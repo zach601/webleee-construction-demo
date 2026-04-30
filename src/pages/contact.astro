@@ -1,0 +1,81 @@
+---
+import SiteLayout from '../components/SiteLayout.astro';
+
+const title = 'Request a Quote | ApexBuild Construction Demo';
+const description = 'Request a fictional construction quote from ApexBuild Construction, a Webleee portfolio demo website.';
+---
+
+<SiteLayout title={title} description={description} path="/contact/">
+  <section class="bg-steel">
+    <div class="container-shell grid gap-10 py-20 lg:grid-cols-[0.85fr_1.15fr]">
+      <div>
+        <p class="eyebrow">Request a Free Quote</p>
+        <h1 class="page-heading mt-4">Tell us what needs building.</h1>
+        <p class="body-copy mt-6">
+          This form is a static UI for the fictional ApexBuild Construction demo. It shows how a contractor website can capture project details clearly.
+        </p>
+        <div class="mt-8 space-y-4 border-l-4 border-ember pl-5 text-sm text-bone/70">
+          <p><strong class="text-bone">Phone:</strong> (000) 000-0000</p>
+          <p><strong class="text-bone">Email:</strong> quotes@example.com</p>
+          <p><strong class="text-bone">Service Area:</strong> Your city and surrounding areas</p>
+        </div>
+      </div>
+
+      <form class="border border-bone/10 bg-bone/[0.045] p-5 sm:p-8" aria-label="Quote request form">
+        <div class="grid gap-5 sm:grid-cols-2">
+          <label class="block">
+            <span class="text-xs font-black uppercase tracking-wide text-sand">Name</span>
+            <input class="mt-2 w-full border border-bone/10 bg-steel px-4 py-3 text-bone outline-none focus:border-ember" type="text" name="name" placeholder="Your name" />
+          </label>
+          <label class="block">
+            <span class="text-xs font-black uppercase tracking-wide text-sand">Phone</span>
+            <input class="mt-2 w-full border border-bone/10 bg-steel px-4 py-3 text-bone outline-none focus:border-ember" type="tel" name="phone" placeholder="(000) 000-0000" />
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-xs font-black uppercase tracking-wide text-sand">Email</span>
+            <input class="mt-2 w-full border border-bone/10 bg-steel px-4 py-3 text-bone outline-none focus:border-ember" type="email" name="email" placeholder="you@example.com" />
+          </label>
+          <label class="block">
+            <span class="text-xs font-black uppercase tracking-wide text-sand">Project Type</span>
+            <select class="mt-2 w-full border border-bone/10 bg-steel px-4 py-3 text-bone outline-none focus:border-ember" name="project-type">
+              <option>New build</option>
+              <option>Home renovation</option>
+              <option>Commercial construction</option>
+              <option>Roofing</option>
+              <option>Maintenance and repairs</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="text-xs font-black uppercase tracking-wide text-sand">Budget Range</span>
+            <select class="mt-2 w-full border border-bone/10 bg-steel px-4 py-3 text-bone outline-none focus:border-ember" name="budget">
+              <option>Not sure yet</option>
+              <option>Small repair</option>
+              <option>Mid-size renovation</option>
+              <option>Large build</option>
+            </select>
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-xs font-black uppercase tracking-wide text-sand">Project Details</span>
+            <textarea class="mt-2 min-h-36 w-full border border-bone/10 bg-steel px-4 py-3 text-bone outline-none focus:border-ember" name="message" placeholder="Tell us about the property, timeline, and work needed"></textarea>
+          </label>
+        </div>
+        <button type="button" class="primary-button mt-6 w-full sm:w-auto">Request Free Quote</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section-pad bg-bone text-steel">
+    <div class="container-shell grid gap-8 lg:grid-cols-3">
+      {[
+        ['Fast Scope Review', 'A quote form should make it easy to understand the job before the first call.'],
+        ['Service Fit', 'The page supports homeowners, landlords, commercial operators, and property managers.'],
+        ['Mobile Ready', 'Large fields and direct contact details work well for visitors on job sites or at home.']
+      ].map((item) => (
+        <article class="border border-steel/10 bg-white p-6">
+          <h2 class="text-xl font-black uppercase">{item[0]}</h2>
+          <p class="mt-3 text-sm leading-6 text-steel/70">{item[1]}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</SiteLayout>

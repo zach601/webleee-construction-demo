@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: #121212;
+    color: #f7f2ea;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  ::selection {
+    background: #f97316;
+    color: #121212;
+  }
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .section-pad {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply text-xs font-black uppercase tracking-[0.22em] text-ember;
+  }
+
+  .display-heading {
+    @apply font-display text-4xl font-black uppercase leading-[0.95] text-bone sm:text-6xl lg:text-7xl;
+  }
+
+  .page-heading {
+    @apply font-display text-4xl font-black uppercase leading-none text-bone sm:text-5xl lg:text-6xl;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl font-black uppercase leading-tight text-bone sm:text-4xl lg:text-5xl;
+  }
+
+  .body-copy {
+    @apply text-base leading-7 text-bone/75;
+  }
+
+  .primary-button {
+    @apply inline-flex min-h-12 items-center justify-center bg-ember px-6 py-3 text-sm font-black uppercase tracking-wide text-steel transition hover:bg-bone focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-steel;
+  }
+
+  .secondary-button {
+    @apply inline-flex min-h-12 items-center justify-center border border-bone/25 px-6 py-3 text-sm font-black uppercase tracking-wide text-bone transition hover:border-ember hover:text-ember focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-steel;
+  }
+
+  .industrial-card {
+    @apply border border-bone/10 bg-bone/[0.045];
+  }
+
+  .image-panel {
+    @apply overflow-hidden bg-graphite;
+  }
+
+  .image-panel img {
+    @apply h-full w-full object-cover;
+  }
+}

@@ -1,0 +1,44 @@
+---
+import SiteLayout from '../components/SiteLayout.astro';
+import ProjectGrid from '../components/ProjectGrid.astro';
+
+const title = 'Projects | ApexBuild Construction Demo';
+const description = 'View fictional construction and renovation project examples for the ApexBuild Construction portfolio demo website.';
+---
+
+<SiteLayout title={title} description={description} path="/projects/">
+  <section class="relative isolate overflow-hidden bg-steel">
+    <div class="absolute inset-0 -z-10">
+      <img class="h-full w-full object-cover opacity-34" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=80" alt="Construction professional reviewing plans" />
+      <div class="absolute inset-0 bg-[linear-gradient(90deg,#121212_0%,rgba(18,18,18,0.82)_48%,rgba(18,18,18,0.55)_100%)]"></div>
+    </div>
+    <div class="container-shell py-20 lg:py-28">
+      <p class="eyebrow">Fictional Project Examples</p>
+      <h1 class="page-heading mt-4 max-w-4xl">Project cards that help buyers picture the finished work.</h1>
+      <p class="body-copy mt-6 max-w-2xl">
+        These are fictional project examples for a Webleee portfolio demo. They are designed to show how construction companies can present work visually and professionally.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-pad bg-bone text-steel">
+    <div class="container-shell">
+      <ProjectGrid />
+    </div>
+  </section>
+
+  <section class="section-pad bg-coal">
+    <div class="container-shell grid gap-8 lg:grid-cols-3">
+      {[
+        ['Residential', 'Renovations, new builds, kitchens, bathrooms, additions, and outdoor spaces.'],
+        ['Commercial', 'Office fit-outs, retail improvements, maintenance programs, and practical build-outs.'],
+        ['Trade Services', 'Roofing, repairs, project coordination, and service-led contractor workflows.']
+      ].map((item) => (
+        <article class="industrial-card p-7">
+          <h2 class="text-2xl font-black uppercase text-bone">{item[0]}</h2>
+          <p class="mt-4 text-sm leading-6 text-bone/60">{item[1]}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</SiteLayout>

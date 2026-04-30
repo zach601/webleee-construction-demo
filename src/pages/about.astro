@@ -1,0 +1,59 @@
+---
+import SiteLayout from '../components/SiteLayout.astro';
+
+const title = 'About | ApexBuild Construction Demo';
+const description = 'Learn about ApexBuild Construction, a fictional premium contractor brand created as a Webleee portfolio website demo.';
+---
+
+<SiteLayout title={title} description={description} path="/about/">
+  <section class="bg-coal">
+    <div class="container-shell grid gap-10 py-20 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+      <div>
+        <p class="eyebrow">About ApexBuild</p>
+        <h1 class="page-heading mt-4">A contractor brand built around clarity and confidence.</h1>
+        <p class="body-copy mt-6 max-w-2xl">
+          ApexBuild Construction is a fictional company profile created for the Webleee portfolio. The messaging is professional and trade-focused without presenting real clients, real awards, or real certifications.
+        </p>
+      </div>
+      <div class="image-panel min-h-[420px] shadow-hard">
+        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80" alt="Construction workers on a job site" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad bg-steel">
+    <div class="container-shell grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
+      <div>
+        <p class="eyebrow">Positioning</p>
+        <h2 class="section-heading mt-3">Premium without exaggeration.</h2>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        {[
+          ['Practical Planning', 'The brand voice emphasizes scope, sequence, budget clarity, and dependable communication.'],
+          ['Trade-Aware Design', 'The site is structured for contractors, builders, renovators, roofers, electricians, plumbers, and service trades.'],
+          ['Visual Trust', 'Large project imagery, concise sections, and direct CTAs help visitors make faster decisions.'],
+          ['Honest Demo Framing', 'The site clearly states that it is a fictional demo created by Webleee.']
+        ].map((item) => (
+          <article class="industrial-card p-6">
+            <h3 class="text-xl font-black uppercase text-bone">{item[0]}</h3>
+            <p class="mt-4 text-sm leading-6 text-bone/60">{item[1]}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad bg-bone text-steel">
+    <div class="container-shell grid gap-8 lg:grid-cols-3">
+      <div class="lg:col-span-1">
+        <p class="text-xs font-black uppercase tracking-[0.22em] text-rust">What This Demo Shows</p>
+        <h2 class="mt-3 font-display text-3xl font-black uppercase leading-tight">A strong digital front door for trade businesses.</h2>
+      </div>
+      <div class="lg:col-span-2">
+        <p class="text-lg leading-8 text-steel/75">
+          Contractor websites need to establish confidence quickly. This demo combines bold typography, grounded color, service clarity, project imagery, and repeat quote pathways so a trade business can look capable before the first phone call.
+        </p>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

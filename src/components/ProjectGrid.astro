@@ -1,0 +1,52 @@
+---
+const projects = [
+  {
+    title: 'Modern Family Home Renovation',
+    category: 'Residential Renovation',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+    text: 'A fictional full-home refresh with open-plan living, modern exterior updates, and warm material finishes.'
+  },
+  {
+    title: 'Office Fit-Out',
+    category: 'Commercial Construction',
+    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
+    text: 'A clean workplace transformation designed around practical circulation, meeting zones, and durable surfaces.'
+  },
+  {
+    title: 'Luxury Bathroom Remodel',
+    category: 'Interior Renovation',
+    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80',
+    text: 'A premium bathroom concept with stone-inspired finishes, improved lighting, and detailed trade coordination.'
+  },
+  {
+    title: 'Outdoor Entertainment Area',
+    category: 'Outdoor Living',
+    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80',
+    text: 'A fictional patio and entertaining space with covered seating, hardscaping, and exterior feature details.'
+  },
+  {
+    title: 'Retail Shop Renovation',
+    category: 'Retail Fit-Out',
+    image: 'https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1200&q=80',
+    text: 'A compact retail build-out focused on customer flow, display walls, lighting, and polished handover.'
+  }
+];
+---
+
+<div class="grid gap-5 lg:grid-cols-2">
+  {projects.map((project, index) => (
+    <article class={`industrial-card grid overflow-hidden ${index === 0 ? 'lg:grid-cols-[1.08fr_0.92fr] lg:col-span-2' : ''}`}>
+      <div class={`image-panel ${index === 0 ? 'min-h-[360px]' : 'min-h-[260px]'}`}>
+        <img src={project.image} alt={`${project.title} concept image`} loading={index === 0 ? 'eager' : 'lazy'} />
+      </div>
+      <div class="flex flex-col justify-between p-6 sm:p-8">
+        <div>
+          <p class="eyebrow">{project.category}</p>
+          <h3 class="mt-4 text-2xl font-black uppercase leading-tight text-bone">{project.title}</h3>
+          <p class="mt-4 text-sm leading-6 text-bone/70">{project.text}</p>
+        </div>
+        <p class="mt-8 border-t border-bone/10 pt-4 text-xs font-bold uppercase tracking-wide text-sand">Fictional project example</p>
+      </div>
+    </article>
+  ))}
+</div>

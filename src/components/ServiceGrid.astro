@@ -1,0 +1,44 @@
+---
+const services = [
+  {
+    title: 'New Builds',
+    text: 'Ground-up residential builds with coordinated planning, trade sequencing, and clean site communication.'
+  },
+  {
+    title: 'Home Renovations',
+    text: 'Whole-home upgrades, structural improvements, additions, and layout transformations for modern living.'
+  },
+  {
+    title: 'Commercial Construction',
+    text: 'Functional business spaces, tenant improvements, fit-outs, and practical construction delivery.'
+  },
+  {
+    title: 'Roofing',
+    text: 'Roof replacements, repairs, inspections, drainage improvements, and exterior weather protection.'
+  },
+  {
+    title: 'Kitchen & Bathroom Renovations',
+    text: 'High-impact remodels with refined finishes, practical layouts, and durable material selections.'
+  },
+  {
+    title: 'Project Management',
+    text: 'Clear timelines, trade coordination, procurement tracking, and structured project communication.'
+  },
+  {
+    title: 'Maintenance & Repairs',
+    text: 'Responsive fixes, small upgrades, punch-list work, and preventative maintenance for properties.'
+  }
+];
+---
+
+<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+  {services.map((service, index) => (
+    <article class="industrial-card group p-6 transition hover:border-ember/70 hover:bg-bone/[0.07]">
+      <div class="mb-10 flex h-12 w-12 items-center justify-center bg-graphite text-sm font-black text-ember group-hover:bg-ember group-hover:text-steel">
+        {String(index + 1).padStart(2, '0')}
+      </div>
+      <h3 class="text-xl font-black uppercase text-bone">{service.title}</h3>
+      <p class="mt-4 text-sm leading-6 text-bone/60">{service.text}</p>
+    </article>
+  ))}
+</div>
