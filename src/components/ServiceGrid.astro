@@ -31,14 +31,14 @@ const services = [
 ];
 ---
 
-<div class="grid gap-3">
+<div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
   {services.map((service, index) => (
-    <article class="industrial-card group grid gap-5 p-5 transition hover:border-ember/70 hover:bg-bone/[0.07] md:grid-cols-[5rem_0.8fr_1.2fr] md:items-center">
-      <div class="flex h-14 w-14 items-center justify-center bg-graphite text-sm font-black text-ember group-hover:bg-ember group-hover:text-steel">
+    <article class="industrial-card group p-6 transition hover:border-ember/70 hover:bg-bone/[0.07]">
+      <div class="mb-10 flex h-12 w-12 items-center justify-center bg-graphite text-sm font-black text-ember group-hover:bg-ember group-hover:text-steel">
         {String(index + 1).padStart(2, '0')}
       </div>
       <h3 class="text-xl font-black uppercase text-bone">{service.title}</h3>
-      <p class="text-sm leading-6 text-bone/60">{service.text}</p>
+      <p class="mt-4 text-sm leading-6 text-bone/60">{service.text}</p>
     </article>
   ))}
 </div>

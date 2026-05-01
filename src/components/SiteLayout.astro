@@ -40,24 +40,18 @@ const navigation = [
     <meta name="twitter:image" content={image} />
   </head>
   <body>
-    <header class="sticky top-0 z-50 border-b border-bone/10 bg-steel/95 backdrop-blur">
-      <div class="bg-ember py-2 text-steel">
-        <div class="container-shell flex justify-between gap-4 text-[0.68rem] font-black uppercase tracking-[0.18em]">
-          <span>Fictional contractor website sample</span>
-          <span class="hidden sm:inline">Project-led layout by Webleee</span>
-        </div>
-      </div>
-      <nav class="container-shell flex min-h-16 items-center justify-between gap-5" aria-label="Primary navigation">
+    <header class="sticky top-0 z-50 border-b border-bone/10 bg-steel/90 backdrop-blur">
+      <nav class="container-shell flex min-h-20 items-center justify-between gap-5" aria-label="Primary navigation">
         <a href="/" class="group flex items-center gap-3" aria-label="ApexBuild Construction home">
-          <span class="flex h-11 w-11 items-center justify-center border-2 border-ember bg-ember text-xl font-black text-steel">A</span>
+          <span class="flex h-11 w-11 items-center justify-center bg-ember text-xl font-black text-steel">A</span>
           <span class="leading-none">
             <span class="block text-sm font-black uppercase tracking-[0.24em] text-bone">ApexBuild</span>
             <span class="mt-1 block text-xs font-bold uppercase tracking-[0.18em] text-sand">Construction</span>
           </span>
         </a>
-        <div class="hidden items-center gap-8 lg:flex">
+        <div class="hidden items-center gap-7 lg:flex">
           {navigation.map((item) => (
-            <a class="border-b-2 border-transparent py-2 text-sm font-bold uppercase tracking-wide text-bone/70 transition hover:border-ember hover:text-ember" href={item.href}>{item.label}</a>
+            <a class="text-sm font-bold uppercase tracking-wide text-bone/70 transition hover:text-ember" href={item.href}>{item.label}</a>
           ))}
         </div>
         <a href="/contact/" class="primary-button hidden lg:inline-flex">Request Quote</a>
@@ -91,9 +85,9 @@ const navigation = [
         <div>
           <h3 class="text-sm font-black uppercase tracking-wide text-bone">Contact</h3>
           <ul class="mt-4 space-y-2 text-sm text-bone/60">
-            <li>Phone placeholder for demo</li>
-            <li>Email placeholder for demo</li>
-            <li>Service area placeholder</li>
+            <li>(000) 000-0000</li>
+            <li>hello@example.com</li>
+            <li>Your service area</li>
           </ul>
         </div>
       </div>
