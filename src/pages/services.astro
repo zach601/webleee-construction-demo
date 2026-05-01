@@ -8,10 +8,10 @@ const description = 'Explore fictional construction, renovation, roofing, projec
 
 <SiteLayout title={title} description={description} path="/services/">
   <section class="bg-coal">
-    <div class="container-shell grid gap-10 py-20 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+    <div class="container-shell grid gap-10 py-20 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
       <div>
         <p class="eyebrow">Services</p>
-        <h1 class="page-heading mt-4">Complete building services for serious projects.</h1>
+        <h1 class="page-heading mt-4">A contractor scope board for serious projects.</h1>
       </div>
       <p class="body-copy max-w-2xl lg:justify-self-end">
         ApexBuild Construction is a fictional contractor brand. This service page is structured to help trade businesses explain scope, process, and value without relying on fake certifications or claims.
@@ -20,7 +20,11 @@ const description = 'Explore fictional construction, renovation, roofing, projec
   </section>
 
   <section class="section-pad bg-steel">
-    <div class="container-shell">
+    <div class="container-shell grid gap-8 lg:grid-cols-[18rem_1fr]">
+      <aside class="border border-bone/10 bg-bone/[0.045] p-5 lg:sticky lg:top-32 lg:self-start">
+        <p class="text-xs font-black uppercase tracking-[0.22em] text-ember">Service index</p>
+        <p class="mt-4 text-sm leading-6 text-bone/65">Built as a practical list a visitor can scan before requesting a quote.</p>
+      </aside>
       <ServiceGrid />
     </div>
   </section>

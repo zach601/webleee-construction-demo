@@ -33,19 +33,19 @@ const projects = [
 ];
 ---
 
-<div class="grid gap-5 lg:grid-cols-2">
+<div class="grid gap-5 lg:grid-cols-12">
   {projects.map((project, index) => (
-    <article class={`industrial-card grid overflow-hidden ${index === 0 ? 'lg:grid-cols-[1.08fr_0.92fr] lg:col-span-2' : ''}`}>
+    <article class={`grid overflow-hidden border border-steel/10 bg-white ${index === 0 ? 'lg:col-span-8 lg:grid-rows-[420px_auto]' : index === 1 ? 'lg:col-span-4' : 'lg:col-span-4'}`}>
       <div class={`image-panel ${index === 0 ? 'min-h-[360px]' : 'min-h-[260px]'}`}>
         <img src={project.image} alt={`${project.title} concept image`} loading={index === 0 ? 'eager' : 'lazy'} />
       </div>
       <div class="flex flex-col justify-between p-6 sm:p-8">
         <div>
-          <p class="eyebrow">{project.category}</p>
-          <h3 class="mt-4 text-2xl font-black uppercase leading-tight text-bone">{project.title}</h3>
-          <p class="mt-4 text-sm leading-6 text-bone/70">{project.text}</p>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-rust">{project.category}</p>
+          <h3 class="mt-4 text-2xl font-black uppercase leading-tight text-steel">{project.title}</h3>
+          <p class="mt-4 text-sm leading-6 text-steel/70">{project.text}</p>
         </div>
-        <p class="mt-8 border-t border-bone/10 pt-4 text-xs font-bold uppercase tracking-wide text-sand">Fictional project example</p>
+        <p class="mt-8 border-t border-steel/10 pt-4 text-xs font-bold uppercase tracking-wide text-rust/70">Fictional project example</p>
       </div>
     </article>
   ))}

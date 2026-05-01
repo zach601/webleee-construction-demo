@@ -5,126 +5,118 @@ import ProjectGrid from '../components/ProjectGrid.astro';
 
 const title = 'ApexBuild Construction | Premium Contractor Website Demo by Webleee';
 const description = 'A fictional premium construction company demo website for builders, renovation companies, contractors, and trade businesses.';
+
+const ledgerItems = [
+  ['Project type', 'Renovations, fit-outs, roofing, repairs'],
+  ['Built for', 'Homeowners, property managers, commercial operators'],
+  ['Website goal', 'Turn project interest into quote requests'],
+  ['Demo note', 'Fictional contractor brand created by Webleee']
+];
+
+const stages = [
+  ['Measure', 'Site context, access, drawings, photos, and project constraints.'],
+  ['Plan', 'Scope, sequencing, trade coordination, materials, and milestones.'],
+  ['Build', 'Clean communication, durable finishes, and practical handover steps.']
+];
 ---
 
 <SiteLayout title={title} description={description}>
   <section class="relative isolate overflow-hidden bg-steel">
     <div class="absolute inset-0 -z-10">
-      <img class="h-full w-full object-cover opacity-44" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=80" alt="Construction team reviewing a building site" />
-      <div class="absolute inset-0 bg-[linear-gradient(90deg,#121212_0%,rgba(18,18,18,0.86)_38%,rgba(18,18,18,0.48)_100%)]"></div>
+      <img class="h-full w-full object-cover opacity-50" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=80" alt="Construction site with concrete and steel work in progress" />
+      <div class="absolute inset-0 bg-[linear-gradient(90deg,#121212_0%,rgba(18,18,18,0.82)_42%,rgba(18,18,18,0.28)_100%)]"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(0deg,#121212_0%,rgba(18,18,18,0)_45%)]"></div>
     </div>
-    <div class="container-shell grid min-h-[760px] items-end gap-10 pb-10 pt-20 lg:grid-cols-[1.12fr_0.88fr]">
-      <div class="max-w-4xl pb-8">
-        <p class="eyebrow">Construction Website Demo</p>
-        <h1 class="display-heading mt-5">Built strong. Finished sharp.</h1>
+    <div class="container-shell grid min-h-[760px] items-end gap-10 pb-10 pt-20 lg:grid-cols-[0.95fr_1.05fr]">
+      <div class="pb-8">
+        <p class="eyebrow">Construction Website Sample</p>
+        <h1 class="display-heading mt-5">Built work first. Quote path clear.</h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-bone/80">
-          ApexBuild Construction is a fictional contractor brand designed to show how Webleee can present builders, renovators, and trade businesses with authority.
+          ApexBuild Construction is a fictional contractor brand designed to show a rugged, project-led website for builders, renovators, roofers, and trade businesses.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href="/contact/" class="primary-button">Request a Quote</a>
-          <a href="/projects/" class="secondary-button">View Projects</a>
+          <a href="/projects/" class="primary-button">View Built Work</a>
+          <a href="/contact/" class="secondary-button">Request Quote</a>
         </div>
       </div>
-      <div class="mb-8 grid border border-bone/15 bg-steel/80 backdrop-blur sm:grid-cols-3 lg:grid-cols-1">
-        {[
-          ['01', 'Planning-first project delivery'],
-          ['02', 'Renovation, roofing, and fit-out services'],
-          ['03', 'Fictional demo built for Webleee']
-        ].map((item) => (
-          <div class="border-b border-bone/10 p-5 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b lg:border-r-0 lg:last:border-b-0">
-            <span class="text-xs font-black text-ember">{item[0]}</span>
-            <p class="mt-2 text-sm font-black uppercase leading-5 text-bone">{item[1]}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="border-y border-bone/10 bg-coal py-8">
-    <div class="container-shell grid gap-4 sm:grid-cols-3">
-      {[
-        ['Quality', 'Detail-focused builds and durable finishes'],
-        ['Communication', 'Clear project milestones and quote visibility'],
-        ['Versatility', 'Residential, commercial, and trade-ready layouts']
-      ].map((item) => (
-        <article class="border-l-4 border-ember bg-bone/[0.045] p-5">
-          <h2 class="text-lg font-black uppercase text-bone">{item[0]}</h2>
-          <p class="mt-2 text-sm leading-6 text-bone/60">{item[1]}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="section-pad bg-steel">
-    <div class="container-shell">
-      <div class="mb-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <p class="eyebrow">Building Services</p>
-          <h2 class="section-heading mt-3">Contractor services with a premium presentation.</h2>
+      <div class="mb-8 border border-bone/15 bg-steel/88 backdrop-blur">
+        <div class="border-b border-bone/10 p-5">
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-ember">Project ledger</p>
+          <h2 class="mt-3 text-3xl font-black uppercase leading-tight text-bone">Job details before sales copy.</h2>
         </div>
-        <a href="/services/" class="secondary-button lg:mb-1">All Services</a>
+        <div class="divide-y divide-bone/10">
+          {ledgerItems.map(([label, value]) => (
+            <div class="grid gap-2 p-5 sm:grid-cols-[0.42fr_1fr]">
+              <p class="text-xs font-black uppercase tracking-wide text-sand">{label}</p>
+              <p class="text-sm font-bold leading-6 text-bone">{value}</p>
+            </div>
+          ))}
+        </div>
       </div>
-      <ServiceGrid />
     </div>
   </section>
 
   <section class="section-pad bg-bone text-steel">
     <div class="container-shell">
-      <div class="mb-10 max-w-3xl">
-        <p class="text-xs font-black uppercase tracking-[0.22em] text-rust">Featured Projects</p>
-        <h2 class="mt-3 font-display text-3xl font-black uppercase leading-tight sm:text-4xl lg:text-5xl">Image-led project cards for builders and renovators.</h2>
+      <div class="mb-10 grid gap-8 lg:grid-cols-[0.72fr_1fr] lg:items-end">
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-rust">Built work</p>
+          <h2 class="mt-3 font-display text-3xl font-black uppercase leading-tight sm:text-4xl lg:text-5xl">The homepage leads with projects, not abstract promises.</h2>
+        </div>
+        <p class="text-lg leading-8 text-steel/70">
+          Contractor buyers want to see the type of work, scale, and finish quality quickly. This demo uses image-led project sections as the main trust builder.
+        </p>
       </div>
       <ProjectGrid />
     </div>
   </section>
 
   <section class="section-pad bg-coal">
-    <div class="container-shell grid gap-8 lg:grid-cols-2">
-      <div class="grid grid-cols-2 gap-4">
-        <div class="image-panel min-h-[440px]">
-          <img src="https://images.unsplash.com/photo-1590725121839-892b458a74fe?auto=format&fit=crop&w=900&q=80" alt="Older interior before renovation concept" loading="lazy" />
-        </div>
-        <div class="image-panel mt-12 min-h-[440px]">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Finished modern home interior concept" loading="lazy" />
-        </div>
+    <div class="container-shell grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+      <div>
+        <p class="eyebrow">Trade blocks</p>
+        <h2 class="section-heading mt-3">Services arranged like a contractor scope list.</h2>
       </div>
-      <div class="flex flex-col justify-center">
-        <p class="eyebrow">Before / After Style</p>
-        <h2 class="section-heading mt-3">Show the transformation, not just the service list.</h2>
-        <p class="body-copy mt-5">
-          Renovation and trade websites need visual proof points. This demo uses strong project imagery, direct messaging, and quote-focused pathways for property owners and commercial clients.
-        </p>
-        <div class="mt-8 grid gap-4 sm:grid-cols-2">
-          <div class="industrial-card p-5">
-            <p class="text-3xl font-black text-ember">Before</p>
-            <p class="mt-2 text-sm leading-6 text-bone/60">Problem spaces, dated finishes, unclear scope.</p>
-          </div>
-          <div class="industrial-card p-5">
-            <p class="text-3xl font-black text-ember">After</p>
-            <p class="mt-2 text-sm leading-6 text-bone/60">Organized plans, sharp visuals, confident calls to action.</p>
-          </div>
-        </div>
-      </div>
+      <ServiceGrid />
     </div>
   </section>
 
-  <section class="section-pad bg-steel">
-    <div class="container-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-      <div>
-        <p class="eyebrow">Why ApexBuild</p>
-        <h2 class="section-heading mt-3">Made to feel dependable before the first call.</h2>
+  <section class="bg-steel py-16">
+    <div class="container-shell grid gap-4 lg:grid-cols-3">
+      {stages.map(([title, text]) => (
+        <article class="relative min-h-64 border border-bone/10 bg-bone/[0.045] p-7">
+          <div class="absolute right-5 top-5 h-16 w-16 border-r-4 border-t-4 border-ember"></div>
+          <h2 class="text-4xl font-black uppercase text-bone">{title}</h2>
+          <p class="mt-5 max-w-sm text-sm leading-7 text-bone/65">{text}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-pad bg-coal">
+    <div class="container-shell grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="image-panel min-h-[460px]">
+          <img src="https://images.unsplash.com/photo-1590725121839-892b458a74fe?auto=format&fit=crop&w=900&q=80" alt="Older interior before renovation concept" loading="eager" />
+        </div>
+        <div class="image-panel mt-12 min-h-[460px]">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Finished modern home interior concept" loading="eager" />
+        </div>
       </div>
-      <div class="grid gap-4 sm:grid-cols-2">
-        {[
-          'Bold service positioning for homeowners and commercial decision-makers.',
-          'Visual project sections that help customers understand the type of work offered.',
-          'Quote-focused contact paths that reduce friction on mobile and desktop.',
-          'Clear fictional disclaimer and Webleee portfolio credit.'
-        ].map((text) => (
-          <div class="border-t-4 border-ember bg-bone/[0.045] p-6">
-            <p class="text-base font-bold leading-7 text-bone/80">{text}</p>
-          </div>
-        ))}
+      <div class="flex flex-col justify-center">
+        <p class="eyebrow">Before / after framing</p>
+        <h2 class="section-heading mt-3">Transformation belongs near the quote path.</h2>
+        <p class="body-copy mt-5">
+          Renovation and trade websites need more than a service list. This section gives visitors a visual reason to imagine the work, then points them toward a quote request.
+        </p>
+        <div class="mt-8 border border-bone/10">
+          {['Problem space', 'Defined scope', 'Finished handover'].map((item, index) => (
+            <div class="grid gap-4 border-b border-bone/10 p-5 last:border-b-0 sm:grid-cols-[4rem_1fr]">
+              <span class="font-black text-ember">0{index + 1}</span>
+              <span class="font-black uppercase text-bone">{item}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -132,8 +124,8 @@ const description = 'A fictional premium construction company demo website for b
   <section class="bg-bone py-12 text-steel">
     <div class="container-shell grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
       <div>
-        <p class="text-xs font-black uppercase tracking-[0.22em] text-rust">Service Areas</p>
-        <h2 class="mt-3 text-3xl font-black uppercase leading-tight">Built for local trade businesses.</h2>
+        <p class="text-xs font-black uppercase tracking-[0.22em] text-rust">Service areas</p>
+        <h2 class="mt-3 text-3xl font-black uppercase leading-tight">Designed for local trade businesses.</h2>
       </div>
       <div class="grid gap-3 sm:grid-cols-3">
         {['Metro area', 'Suburban builds', 'Commercial districts', 'Renovation zones', 'Roofing routes', 'Maintenance calls'].map((area) => (
@@ -144,12 +136,15 @@ const description = 'A fictional premium construction company demo website for b
   </section>
 
   <section class="section-pad bg-ember text-steel">
-    <div class="container-shell flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-      <div class="max-w-3xl">
-        <p class="text-xs font-black uppercase tracking-[0.22em]">Request a Quote</p>
-        <h2 class="mt-3 font-display text-4xl font-black uppercase leading-none sm:text-5xl">Ready to frame the next project?</h2>
+    <div class="container-shell grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
+      <div>
+        <p class="text-xs font-black uppercase tracking-[0.22em]">Quote request</p>
+        <h2 class="mt-3 font-display text-4xl font-black uppercase leading-none sm:text-5xl">Start with the job details.</h2>
       </div>
-      <a href="/contact/" class="inline-flex min-h-12 items-center justify-center bg-steel px-6 py-3 text-sm font-black uppercase tracking-wide text-bone transition hover:bg-bone hover:text-steel">Start the Quote</a>
+      <div class="bg-steel p-6 text-bone">
+        <p class="text-sm leading-7 text-bone/70">The contact page is structured for scope, property type, service fit, and project details. This is demo UI for a fictional contractor brand.</p>
+        <a href="/contact/" class="mt-6 inline-flex min-h-12 items-center justify-center bg-bone px-6 py-3 text-sm font-black uppercase tracking-wide text-steel transition hover:bg-sand">Request Quote</a>
+      </div>
     </div>
   </section>
 </SiteLayout>

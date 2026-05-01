@@ -13,8 +13,8 @@ const description = 'View fictional construction and renovation project examples
       <div class="absolute inset-0 bg-[linear-gradient(90deg,#121212_0%,rgba(18,18,18,0.82)_48%,rgba(18,18,18,0.55)_100%)]"></div>
     </div>
     <div class="container-shell py-20 lg:py-28">
-      <p class="eyebrow">Fictional Project Examples</p>
-      <h1 class="page-heading mt-4 max-w-4xl">Project cards that help buyers picture the finished work.</h1>
+      <p class="eyebrow">Built work archive</p>
+      <h1 class="page-heading mt-4 max-w-4xl">Fictional projects presented like a contractor portfolio.</h1>
       <p class="body-copy mt-6 max-w-2xl">
         These are fictional project examples for a Webleee portfolio demo. They are designed to show how construction companies can present work visually and professionally.
       </p>
@@ -28,7 +28,12 @@ const description = 'View fictional construction and renovation project examples
   </section>
 
   <section class="section-pad bg-coal">
-    <div class="container-shell grid gap-8 lg:grid-cols-3">
+    <div class="container-shell grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+      <div>
+        <p class="eyebrow">Project filters</p>
+        <h2 class="section-heading mt-3">Different job types need different proof points.</h2>
+      </div>
+      <div class="grid gap-4 md:grid-cols-3">
       {[
         ['Residential', 'Renovations, new builds, kitchens, bathrooms, additions, and outdoor spaces.'],
         ['Commercial', 'Office fit-outs, retail improvements, maintenance programs, and practical build-outs.'],
@@ -39,6 +44,7 @@ const description = 'View fictional construction and renovation project examples
           <p class="mt-4 text-sm leading-6 text-bone/60">{item[1]}</p>
         </article>
       ))}
+      </div>
     </div>
   </section>
 </SiteLayout>
